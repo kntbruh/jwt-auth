@@ -1,18 +1,14 @@
 import { View, StyleSheet, Text, TextInput, Pressable } from "react-native";
-import { Link } from "expo-router";
 import React from "react";
 
-export default function HomeScreen() {
+export default function Register() {
   const [text, onChangeText] = React.useState("");
-  const onLogin = () => {
-    console.log("login");
-  };
-  const onRegister = () => {
-    console.log("register");
+  const onPressFunc = () => {
+    console.log("pressed");
   };
   return (
     <View style={styles.titleContainer}>
-      <Text style={styles.text}>Login</Text>
+      <Text style={styles.text}>Register</Text>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -29,14 +25,9 @@ export default function HomeScreen() {
           placeholderTextColor="#fff"
         />
       </View>
-      <Pressable style={styles.button} onPress={onLogin}>
-        <Text style={styles.text}>Log in</Text>
+      <Pressable style={styles.button} onPress={onPressFunc}>
+        <Text style={styles.text}>I'm pressable!</Text>
       </Pressable>
-      <Link href="/register" asChild>
-        <Pressable style={styles.button} onPress={onRegister}>
-          <Text style={styles.text}>Registration</Text>
-        </Pressable>
-      </Link>
     </View>
   );
 }
@@ -59,5 +50,5 @@ const styles = StyleSheet.create({
     padding: 10,
     color: "white",
   },
-  button: { padding: 10, backgroundColor: "violet", marginBottom: 20 },
+  button: { padding: 10, backgroundColor: "violet" },
 });
